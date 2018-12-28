@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
-
+import 'package:cached_network_image/cached_network_image.dart';
 class BasicRouter extends StatefulWidget {
   @override
   _BasicRouterState createState() {
@@ -24,13 +24,19 @@ class _BasicRouterState extends State<BasicRouter> {
       ),
       body: Padding(
         padding: const EdgeInsets.all(10),
+//        Column 在垂直方向上的布局,可以嵌套Row,这个row可以指定单独的Item的对齐方式
         child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
-            Image.network(
-              "https://avatars2.githubusercontent.com/u/20411648?s=460&v=4",
-              width: 100.0,
-              // color: Colors.green,
-              // colorBlendMode: BlendMode.difference,
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: <Widget>[
+                new Text('asdfdaadfsadf')
+              ],
+            ),
+            new CachedNetworkImage(
+              placeholder: new CircularProgressIndicator(),
+              imageUrl: 'http://www.yougexing.net/uploads/180511/1-1P511150130.jpg',
             ),
             new Padding(
               padding: EdgeInsets.all(30),

@@ -3,6 +3,9 @@ import 'package:flutter/rendering.dart';
 import 'package:flutterapp/pages/login.dart';
 import 'package:flutterapp/pages/container.dart';
 import 'package:flutterapp/pages/basic.dart';
+import 'package:flutterapp/pages/stack_c.dart';
+import 'package:flutterapp/pages/scrollWidget.dart';
+import 'package:flutterapp/pages/listView.dart';
 void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
@@ -23,6 +26,9 @@ class MyApp extends StatelessWidget {
         'login': (context) => FormTestRoute(),
         'container': (context) => ContainerRouter(),
         'basic': (context) => BasicRouter(),
+        'stack': (context) => StackRoute(),
+        'scroll': (context) => ScrollWidget(),
+        'list': (context) => ListViewRoute(),
       },
       // 首页
       home: new MyHomePage(title: 'Flutter Demo Home Page'),
@@ -83,8 +89,37 @@ class _MyHomePageState extends State<MyHomePage> {
               // 作为显示按钮内容的child
               child: Text("login"),
               shape:RoundedRectangleBorder(borderRadius: BorderRadius.circular(20.0)),
-              onPressed: ()=> Navigator.pushNamed(context, "login")
-              ,
+              onPressed: ()=> Navigator.pushNamed(context, "login"),
+            ),
+            FlatButton(
+              color: Colors.blue,
+              highlightColor: Colors.blue[700],
+              colorBrightness: Brightness.dark,
+              splashColor: Colors.grey,
+              // 作为显示按钮内容的child
+              child: Text("stack"),
+              shape:RoundedRectangleBorder(borderRadius: BorderRadius.circular(20.0)),
+              onPressed: ()=> Navigator.pushNamed(context, "stack"),
+            ),
+            FlatButton(
+              color: Colors.green,
+              highlightColor: Colors.green[700],
+              colorBrightness: Brightness.dark,
+              splashColor: Colors.grey,
+              // 作为显示按钮内容的child
+              child: Text("scroll"),
+              shape:RoundedRectangleBorder(borderRadius: BorderRadius.circular(20.0)),
+              onPressed: ()=> Navigator.pushNamed(context, "scroll"),
+            ),
+            FlatButton(
+              color: Colors.blue,
+              highlightColor: Colors.blue[700],
+              colorBrightness: Brightness.dark,
+              splashColor: Colors.grey,
+              // 作为显示按钮内容的child
+              child: Text("listview"),
+              shape:RoundedRectangleBorder(borderRadius: BorderRadius.circular(20.0)),
+              onPressed: ()=> Navigator.pushNamed(context, "list"),
             ),
           ],
         ),
