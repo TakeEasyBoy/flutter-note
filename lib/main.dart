@@ -6,6 +6,8 @@ import 'package:flutterapp/pages/basic.dart';
 import 'package:flutterapp/pages/stack_c.dart';
 import 'package:flutterapp/pages/scrollWidget.dart';
 import 'package:flutterapp/pages/listView.dart';
+import 'package:flutterapp/pages/gridView.dart';
+import 'package:flutterapp/pages/costumScroll.dart';
 void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
@@ -29,6 +31,8 @@ class MyApp extends StatelessWidget {
         'stack': (context) => StackRoute(),
         'scroll': (context) => ScrollWidget(),
         'list': (context) => ListViewRoute(),
+        'grid': (context) => GridviewRoute(),
+        'costum': (context) => CustomScrollViewTestRoute(),
       },
       // 首页
       home: new MyHomePage(title: 'Flutter Demo Home Page'),
@@ -120,6 +124,26 @@ class _MyHomePageState extends State<MyHomePage> {
               child: Text("listview"),
               shape:RoundedRectangleBorder(borderRadius: BorderRadius.circular(20.0)),
               onPressed: ()=> Navigator.pushNamed(context, "list"),
+            ),
+            FlatButton(
+              color: Colors.red,
+              highlightColor: Colors.red[700],
+              colorBrightness: Brightness.dark,
+              splashColor: Colors.grey,
+              // 作为显示按钮内容的child
+              child: Text("listview"),
+              shape:RoundedRectangleBorder(borderRadius: BorderRadius.circular(20.0)),
+              onPressed: ()=> Navigator.pushNamed(context, "grid"),
+            ),
+            FlatButton(
+              color: Colors.blue,
+              highlightColor: Colors.blue[700],
+              colorBrightness: Brightness.dark,
+              splashColor: Colors.grey,
+              // 作为显示按钮内容的child
+              child: Text("costum"),
+              shape:RoundedRectangleBorder(borderRadius: BorderRadius.circular(20.0)),
+              onPressed: ()=> Navigator.pushNamed(context, "costum"),
             ),
           ],
         ),
