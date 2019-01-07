@@ -8,6 +8,8 @@ import 'package:flutterapp/pages/scrollWidget.dart';
 import 'package:flutterapp/pages/listView.dart';
 import 'package:flutterapp/pages/gridView.dart';
 import 'package:flutterapp/pages/costumScroll.dart';
+import 'package:flutterapp/pages/testwillPopScope.dart';
+
 void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
@@ -33,6 +35,7 @@ class MyApp extends StatelessWidget {
         'list': (context) => ListViewRoute(),
         'grid': (context) => GridviewRoute(),
         'costum': (context) => CustomScrollViewTestRoute(),
+        'popscope': (context) => WillPopScopeTestRoute(),
       },
       // 首页
       home: new MyHomePage(title: 'Flutter Demo Home Page'),
@@ -64,7 +67,7 @@ class _MyHomePageState extends State<MyHomePage> {
           // mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             // 自定义按钮
-            FlatButton(
+            new FlatButton(
               color: Colors.blue,
               highlightColor: Colors.blue[700],
               colorBrightness: Brightness.dark,
@@ -74,7 +77,7 @@ class _MyHomePageState extends State<MyHomePage> {
               shape:RoundedRectangleBorder(borderRadius: BorderRadius.circular(20.0)),
               onPressed: ()=> Navigator.pushNamed(context, 'container'),
             ),
-            FlatButton(
+            new FlatButton(
               color: Colors.blue,
               highlightColor: Colors.blue[700],
               colorBrightness: Brightness.dark,
@@ -85,7 +88,7 @@ class _MyHomePageState extends State<MyHomePage> {
               onPressed: ()=> Navigator.pushNamed(context, 'basic'),
             ),
             // 自定义按钮
-            FlatButton(
+            new FlatButton(
               color: Colors.green,
               highlightColor: Colors.green[700],
               colorBrightness: Brightness.dark,
@@ -95,7 +98,7 @@ class _MyHomePageState extends State<MyHomePage> {
               shape:RoundedRectangleBorder(borderRadius: BorderRadius.circular(20.0)),
               onPressed: ()=> Navigator.pushNamed(context, "login"),
             ),
-            FlatButton(
+            new FlatButton(
               color: Colors.blue,
               highlightColor: Colors.blue[700],
               colorBrightness: Brightness.dark,
@@ -105,7 +108,7 @@ class _MyHomePageState extends State<MyHomePage> {
               shape:RoundedRectangleBorder(borderRadius: BorderRadius.circular(20.0)),
               onPressed: ()=> Navigator.pushNamed(context, "stack"),
             ),
-            FlatButton(
+            new FlatButton(
               color: Colors.green,
               highlightColor: Colors.green[700],
               colorBrightness: Brightness.dark,
@@ -115,7 +118,7 @@ class _MyHomePageState extends State<MyHomePage> {
               shape:RoundedRectangleBorder(borderRadius: BorderRadius.circular(20.0)),
               onPressed: ()=> Navigator.pushNamed(context, "scroll"),
             ),
-            FlatButton(
+            new FlatButton(
               color: Colors.blue,
               highlightColor: Colors.blue[700],
               colorBrightness: Brightness.dark,
@@ -125,17 +128,17 @@ class _MyHomePageState extends State<MyHomePage> {
               shape:RoundedRectangleBorder(borderRadius: BorderRadius.circular(20.0)),
               onPressed: ()=> Navigator.pushNamed(context, "list"),
             ),
-            FlatButton(
+            new FlatButton(
               color: Colors.red,
               highlightColor: Colors.red[700],
               colorBrightness: Brightness.dark,
               splashColor: Colors.grey,
               // 作为显示按钮内容的child
-              child: Text("listview"),
+              child: Text("grid"),
               shape:RoundedRectangleBorder(borderRadius: BorderRadius.circular(20.0)),
               onPressed: ()=> Navigator.pushNamed(context, "grid"),
             ),
-            FlatButton(
+            new FlatButton(
               color: Colors.blue,
               highlightColor: Colors.blue[700],
               colorBrightness: Brightness.dark,
@@ -145,9 +148,20 @@ class _MyHomePageState extends State<MyHomePage> {
               shape:RoundedRectangleBorder(borderRadius: BorderRadius.circular(20.0)),
               onPressed: ()=> Navigator.pushNamed(context, "costum"),
             ),
+            new FlatButton(
+              color: Colors.green,
+              highlightColor: Colors.green[700],
+              colorBrightness: Brightness.dark,
+              splashColor: Colors.grey,
+              // 作为显示按钮内容的child
+              child: Text("popscope"),
+              shape:RoundedRectangleBorder(borderRadius: BorderRadius.circular(20.0)),
+              onPressed: ()=> Navigator.pushNamed(context, "popscope"),
+            ),
           ],
         ),
       ),
+
     );
   }
 }
