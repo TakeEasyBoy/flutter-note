@@ -27,7 +27,7 @@ class _GridView extends State<GridviewRoute> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
             new Container(
-              constraints: BoxConstraints.tightFor(width: 400.0, height: 250.0), //卡片大小
+              constraints: BoxConstraints.tightFor(width: 400.0, height: 100.0), //卡片大小
               child: new GridView(
                   gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                       crossAxisCount: 4, //纵轴三个子widget
@@ -49,7 +49,7 @@ class _GridView extends State<GridviewRoute> {
                 margin: EdgeInsets.all(15.0),
                 alignment: Alignment.center,
                 color: Colors.blue,
-                width: 300.0,
+                width: 200.0,
                 height: 150.0,
                 child: Text(_event?.toString()??"",style: TextStyle(color: Colors.white)),
               ),

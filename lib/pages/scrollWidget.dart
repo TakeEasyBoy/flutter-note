@@ -45,7 +45,10 @@ class _ScrollWidget extends State<ScrollWidget> {
           itemExtent: 50.0, //列表项高度固定时，显式指定高度是一个好习惯(性能消耗小)
           controller: _controller,
           itemBuilder: (context, index) {
-            return ListTile(title: Text("$index"),);
+            return ListTile(
+              title: Text("assdaafgasdg$index"),
+              leading: const Icon(Icons.flight_land),
+            );
           }
         ),
       ),

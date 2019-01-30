@@ -9,7 +9,7 @@ import 'package:flutterapp/pages/listView.dart';
 import 'package:flutterapp/pages/gridView.dart';
 import 'package:flutterapp/pages/costumScroll.dart';
 import 'package:flutterapp/pages/testwillPopScope.dart';
-
+import 'package:flutterapp/pages/animation.dart';
 void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
@@ -18,10 +18,10 @@ class MyApp extends StatelessWidget {
     return new MaterialApp(
       title: 'Flutter Demo',
       theme: new ThemeData(
-        primarySwatch: Colors.blue,
+        primarySwatch: Colors.green,
         hintColor: Colors.grey[200],
         inputDecorationTheme: InputDecorationTheme(
-          labelStyle: TextStyle(color: Colors.grey),//定义label字体样式
+          labelStyle: TextStyle(color: Colors.black),//定义label字体样式
           hintStyle: TextStyle(color: Colors.grey, fontSize: 14.0)//定义提示文本样式
         )
       ),
@@ -36,6 +36,7 @@ class MyApp extends StatelessWidget {
         'grid': (context) => GridviewRoute(),
         'costum': (context) => CustomScrollViewTestRoute(),
         'popscope': (context) => WillPopScopeTestRoute(),
+        'anim': (context) => TurnBoxRoute(),
       },
       // 首页
       home: new MyHomePage(title: 'Flutter Demo Home Page'),
@@ -157,6 +158,16 @@ class _MyHomePageState extends State<MyHomePage> {
               child: Text("popscope"),
               shape:RoundedRectangleBorder(borderRadius: BorderRadius.circular(20.0)),
               onPressed: ()=> Navigator.pushNamed(context, "popscope"),
+            ),
+            new FlatButton(
+              color: Colors.green,
+              highlightColor: Colors.green[700],
+              colorBrightness: Brightness.dark,
+              splashColor: Colors.grey,
+              // 作为显示按钮内容的child
+              child: Text("animation"),
+              shape:RoundedRectangleBorder(borderRadius: BorderRadius.circular(20.0)),
+              onPressed: ()=> Navigator.pushNamed(context, "anim"),
             ),
           ],
         ),
